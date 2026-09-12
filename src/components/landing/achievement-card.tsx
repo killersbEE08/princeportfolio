@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CaretRight } from "@phosphor-icons/react";
+import { CaretRight, ArrowSquareOut } from "@phosphor-icons/react";
 import { AchievementPhoto } from "@/components/achievement-photo";
 import { LiquidGlassCard } from "@/components/ui/liquid-glass";
 import {
@@ -67,6 +67,18 @@ export function AchievementCard({
               <span className="rounded-md border border-border bg-muted px-2 py-0.5 text-xs text-secondary">
                 {achievement.title}
               </span>
+              {achievement.verifyUrl && (
+                <Link
+                  href={achievement.verifyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Verify ${achievement.organization}`}
+                  className="inline-flex items-center gap-1 rounded-md border border-border px-2 py-0.5 text-xs text-secondary transition-colors hover:bg-muted hover:text-foreground"
+                >
+                  Verify
+                  <ArrowSquareOut className="size-3.5" />
+                </Link>
+              )}
               {hasDetails && (
                 <CollapsibleTrigger
                   className={cn(

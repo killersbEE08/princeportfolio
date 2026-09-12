@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
+import { ArrowLeft, ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
 import { AchievementGallery } from "@/components/achievement-gallery";
 import { AchievementPhoto } from "@/components/achievement-photo";
 import { Container } from "@/components/container";
@@ -70,6 +70,17 @@ export default async function AchievementDetailPage({
               <span className="rounded-md border border-border bg-muted px-2.5 py-1 text-xs font-medium text-secondary">
                 {achievement.title}
               </span>
+              {achievement.verifyUrl && (
+                <Link
+                  href={achievement.verifyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-2.5 py-1 text-xs font-medium transition-colors hover:bg-muted"
+                >
+                  Verify credential
+                  <ArrowSquareOut className="size-3.5" />
+                </Link>
+              )}
             </div>
             <p className="text-sm text-secondary">
               {achievement.periodLong} · {achievement.year}

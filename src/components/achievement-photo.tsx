@@ -33,14 +33,15 @@ export function AchievementPhoto({
   }
 
   return (
-    <div className={cn("relative overflow-hidden bg-muted", className)}>
+    <div className={cn("relative overflow-hidden bg-white", className)}>
       <Image
         src={achievement.image!}
         alt={`${achievement.organization} — ${achievement.title}`}
         fill
         sizes="(max-width: 768px) 100vw, 400px"
-        className="object-cover"
+        className="object-contain p-4"
         priority={priority}
+        unoptimized
         onError={() => setFailed(true)}
       />
     </div>
