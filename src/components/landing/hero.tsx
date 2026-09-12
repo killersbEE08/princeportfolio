@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Copy, Check, SealCheck } from "@phosphor-icons/react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   EnvelopeSimple,
   FileText,
@@ -31,6 +30,14 @@ const iconMap = {
 
 export function Hero() {
   const [copied, setCopied] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      // Play the header clip in slow motion.
+      videoRef.current.playbackRate = 0.5;
+    }
+  }, []);
 
   const copyEmail = async () => {
     await navigator.clipboard.writeText(heroConfig.email);
@@ -43,13 +50,15 @@ export function Hero() {
       <div className="animate-in-up-on-view flex flex-col gap-5">
         <div className="corner-frame relative h-[calc(var(--grid-cell-size)*4)] overflow-visible">
           <div className="relative size-full overflow-hidden border border-foreground/15">
-          <Image
-            src="/assets/header.jpeg"
-            alt="Prince Kumar header"
-            fill
-            priority
-            sizes="(max-width: 640px) 100vw, 720px"
-            className="object-cover"
+          <video
+            ref={videoRef}
+            src="/assets/header.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="size-full object-cover"
           />
           <div className="absolute inset-0 bg-black/10" />
           </div>
