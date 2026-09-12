@@ -1,23 +1,27 @@
 export type TechItem = {
   name: string;
+  /**
+   * A simple-icons slug (e.g. "python"), an absolute URL, or a local path
+   * starting with "/". Leave empty ("") to render a text badge instead —
+   * useful for brands not available on simple-icons (Power BI, Excel, SQL).
+   */
   icon: string;
 };
 
 export const techStack: TechItem[] = [
-  { name: "TypeScript", icon: "typescript" },
+  { name: "SQL", icon: "" },
+  { name: "Power BI", icon: "" },
+  { name: "Excel", icon: "" },
+  { name: "DAX", icon: "" },
   { name: "Python", icon: "python" },
-  { name: "React", icon: "react" },
-  { name: "Next.js", icon: "nextdotjs" },
-  { name: "Tailwind CSS", icon: "tailwindcss" },
-  { name: "FastAPI", icon: "fastapi" },
-  { name: "Node.js", icon: "nodedotjs" },
+  { name: "Pandas", icon: "pandas" },
+  { name: "NumPy", icon: "numpy" },
+  { name: "PostgreSQL", icon: "postgresql" },
+  { name: "Google Analytics", icon: "googleanalytics" },
+  { name: "Search Console", icon: "googlesearchconsole" },
+  { name: "Jupyter", icon: "jupyter" },
+  { name: "OpenAI", icon: "openai" },
+  { name: "LangChain", icon: "langchain" },
   { name: "Git", icon: "git" },
   { name: "GitHub", icon: "github" },
-  { name: "Docker", icon: "docker" },
-  { name: "PostgreSQL", icon: "postgresql" },
-  { name: "MongoDB", icon: "mongodb" },
-  { name: "FAISS", icon: "meta" },
-  { name: "Vercel", icon: "vercel" },
-  { name: "Postman", icon: "postman" },
-  { name: "Figma", icon: "figma" },
 ];

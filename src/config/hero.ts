@@ -1,37 +1,32 @@
 export const heroConfig = {
-  name: "Priyanshu Urmaliya",
-  email: "priyanshuurmaliya23011@gmail.com",
-  bio: "AI engineer and full-stack developer building RAG systems, LLM apps, and real-world products.",
+  name: "Prince Kumar",
+  email: "princekumarmandal78@gmail.com",
+  bio: "Data & Business Analyst turning raw data into decisions with SQL, Power BI, and Python — and exploring data engineering and RAG-powered analytics.",
   avatar: "/assets/avatar.png",
   avatarSmile: "/assets/avatar-smile.png",
   timezone: "Asia/Kolkata",
-  location: "Indore, India",
+  location: "Gurugram, India",
 };
 
 export const socialLinks = [
   {
-    name: "X",
-    href: "https://x.com/imdevPU23",
-    icon: "x" as const,
-  },
-  {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/priyanshu-urmaliya-1183b425a/",
+    href: "https://www.linkedin.com/in/princekumar",
     icon: "linkedin" as const,
   },
   {
     name: "GitHub",
-    href: "https://github.com/GitHpriyanshu23",
+    href: "https://github.com/killersbEE08",
     icon: "github" as const,
   },
   {
-    name: "Medium",
-    href: "https://medium.com/@priyanshuurmaliya2003",
-    icon: "medium" as const,
+    name: "Website",
+    href: "https://princekumar.me",
+    icon: "resume" as const,
   },
   {
     name: "Mail",
-    href: "mailto:priyanshuurmaliya23011@gmail.com",
+    href: "mailto:princekumarmandal78@gmail.com",
     icon: "mail" as const,
   },
   {

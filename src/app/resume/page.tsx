@@ -53,7 +53,7 @@ export default function ResumePage() {
         >
           <iframe
             src={resumeConfig.embedUrl}
-            title="Priyanshu Urmaliya resume"
+            title="Prince Kumar resume"
             className="aspect-[3/4] w-full min-h-[70vh] bg-muted sm:aspect-auto sm:min-h-[80vh]"
             allow="autoplay"
           />

@@ -9,7 +9,7 @@ import { createPageMetadata, pageTitle } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: pageTitle("Blog"),
   description:
-    "Notes on building, grief, growth, and lessons from the journey by Priyanshu Urmaliya.",
+    "Notes on data, analytics, and lessons from the journey by Prince Kumar.",
   path: "/blog",
 });
 
@@ -21,7 +21,7 @@ export default async function BlogPage() {
       <Container>
         <h1 className="text-3xl font-bold tracking-tight">Blog</h1>
         <p className="mt-3 text-secondary">
-          Notes on building, grief, growth, and lessons from the journey.
+          Notes on data, analytics, dashboards, and lessons from the journey.
         </p>
       </Container>
 

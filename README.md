@@ -1,10 +1,10 @@
-# Priyanshu Urmaliya — Portfolio
+# Prince Kumar — Portfolio
 
-Personal portfolio for an AI engineer and full-stack developer. Built with Next.js 15, TypeScript, Tailwind CSS v4, and MDX — clean layout, fast pages, and content you can edit without touching UI code.
+Personal portfolio for a data & business analyst. Built with Next.js 15, TypeScript, Tailwind CSS v4, and MDX — clean layout, fast pages, and content you can edit without touching UI code.
 
 ![Portfolio preview](./public/assets/readme-preview.png)
 
-**Live:** [priyanshuurmaliya.dev](https://priyanshuurmaliya.dev) · **GitHub:** [@GitHpriyanshu23](https://github.com/GitHpriyanshu23)
+**Live:** [princekumar.me](https://princekumar.me) · **GitHub:** [@killersbEE08](https://github.com/killersbEE08)
 
 ---
 
@@ -13,7 +13,7 @@ Personal portfolio for an AI engineer and full-stack developer. Built with Next.
 - **Home** — hero, tech stack, experience, achievements, featured projects, GitHub contributions, quote & visitor card
 - **About** — narrative story page with highlighted text and connect links
 - **Projects** — card grid with cover images, GitHub + live demo links, tech stack icons
-- **Achievements** — SIH 2024 & 2025 with photo galleries
+- **Achievements** — Certifications (Google Data Analytics, GA4)
 - **Blog** — MDX posts with custom covers
 - **Books & Favourites** — curated lists with hover cards
 - **Resume** — embedded PDF viewer with download link
@@ -42,8 +42,8 @@ Personal portfolio for an AI engineer and full-stack developer. Built with Next.
 **Requirements:** Node.js 18+
 
 ```bash
-git clone https://github.com/GitHpriyanshu23/My_portfolio.git
-cd My_portfolio
+git clone https://github.com/killersbEE08/princeportfolio.git
+cd princeportfolio
 npm install
 npm run dev
 ```

@@ -17,7 +17,7 @@ export function AchievementsSection({
   return (
     <Container>
       <div className="mb-4 flex items-end justify-between gap-4">
-        <SectionHeading title="Achievements" uppercase className="mb-0" />
+        <SectionHeading title="Certifications" uppercase className="mb-0" />
         {showAllLink && (
           <Link
             href="/achievements"

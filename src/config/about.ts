@@ -1,82 +1,82 @@
 import { heroConfig } from "@/config/hero";
 
 export const aboutConfig = {
-  headline: ["From curious experiments", "to building with AI."],
+  headline: ["From raw numbers", "to business decisions."],
   intro:
-    "I'm Priyanshu Urmaliya — an **AI engineer** and **full-stack developer** who enjoys turning messy ideas into working products. I care about the details: clean APIs, useful interfaces, and systems that actually **ship**.",
+    "I'm Prince Kumar — a **data & business analyst** who turns messy data into clear, actionable insight. I care about the details: clean datasets, honest metrics, and dashboards that help people **decide faster**.",
   quote:
-    "I believe the best builders learn in public, ship early, and refine until the product feels obvious to use.",
-  traits: ["Curious", "Builder", "Focused", "Persistent"] as const,
+    "A good dashboard doesn't just show numbers — it answers the question the business is actually asking.",
+  traits: ["Analytical", "Curious", "Detail-oriented", "Persistent"] as const,
   traitStyles: {
-    Curious:
+    Analytical:
       "border-sky-200 bg-sky-50 text-sky-700 dark:border-sky-800/80 dark:bg-sky-950/40 dark:text-sky-300",
-    Builder:
+    Curious:
       "border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-800/80 dark:bg-emerald-950/40 dark:text-emerald-300",
-    Focused:
+    "Detail-oriented":
       "border-amber-200 bg-amber-50 text-amber-700 dark:border-amber-800/80 dark:bg-amber-950/40 dark:text-amber-300",
     Persistent:
       "border-violet-200 bg-violet-50 text-violet-700 dark:border-violet-800/80 dark:bg-violet-950/40 dark:text-violet-300",
   },
   meta: [
     { label: "Location", value: heroConfig.location },
-    { label: "Status", value: "Open to opportunities" },
-    { label: "Focus", value: "AI · RAG · Full-stack" },
+    { label: "Status", value: "Open to Data Analyst / Analytics roles" },
+    { label: "Focus", value: "Analytics · BI · Data Engineering" },
   ],
   story: {
     title: "How it started",
     paragraphs: [
-      "It started in school with a simple question: how does software actually work? I was fascinated by how a few lines of code could become something people use every day. That **curiosity** pushed me toward engineering — and eventually toward **AI**.",
-      "College became a mix of coursework, **hackathons**, and late-night builds. I failed plenty along the way — exams, competitions, and projects that never made it past version one. But each attempt taught me something about **scope**, **teamwork**, and staying calm when things break.",
-      "Hackathons changed the pace. **Smart India Hackathon** pushed me to ship under pressure with a team, communicate clearly, and demo something real — not just a slide deck. That experience shaped how I build today: fast iterations, tight feedback loops, and focus on what **users** actually need.",
-      "Now I spend most of my time at the intersection of **AI and product** — RAG systems, LLM workflows, and full-stack apps that connect models to real interfaces. I'm still figuring things out, but I'm doing it by **building**.",
+      "I started in digital marketing, where the real work wasn't the campaigns — it was the **numbers** behind them. I found myself living in dashboards, asking why a metric moved and what to do about it. That pull toward **data** is what shaped my path.",
+      "Working across GA4, Search Console, and ad platforms, I learned to turn scattered metrics into **structured reports** that non-technical stakeholders could actually act on. Clean data and a clear story beat a fancy chart every time.",
+      "An **MBA in Business Analytics** gave me the framework to connect data to decisions — ROI, cost-benefit analysis, and revenue attribution — while SQL, Power BI, and Python became the tools I reach for daily.",
+      "Now I work at the intersection of **analytics and engineering** — building KPI dashboards, modeling data with SQL and DAX, and exploring how **Python and RAG** can make analytics faster and more conversational.",
     ],
   },
   principles: {
     title: "How I work",
     items: [
       {
-        title: "Stay curious",
+        title: "Start with the question",
         description:
-          "AI moves fast. I learn by building, reading, and talking to people a few steps ahead of me.",
+          "Every dashboard begins with the decision it needs to support — not the chart I want to build.",
       },
       {
-        title: "Ship, then refine",
+        title: "Trust the data",
         description:
-          "A working prototype beats a perfect plan. I prefer real feedback over endless polishing.",
+          "Cleaning, validating, and modeling come first. Insights are only as good as the data behind them.",
       },
       {
-        title: "Sweat the details",
+        title: "Tell the story",
         description:
-          "Loading states, edge cases, and clear UX matter as much as the model or API behind them.",
+          "I translate complex metrics into clear narratives that non-technical stakeholders can act on.",
       },
       {
-        title: "Build for humans",
+        title: "Measure the impact",
         description:
-          "Technology is a means to an end. If it doesn't solve a real problem, it doesn't count.",
+          "Analysis should move a number — conversion, cost, retention. If it doesn't drive a decision, it's noise.",
       },
     ],
   },
   beyond: {
-    title: "Beyond the code",
+    title: "Beyond the dashboards",
     paragraphs: [
-      "Outside of work, you'll find me writing on Medium, exploring new tools, or chasing the next **hackathon** idea. I like **learning in public** and sharing what actually worked — and what didn't.",
-      "I'm drawn to builders who combine **technical depth** with **clarity**. That's the kind of engineer I want to become.",
+      "Outside of analytics, I'm usually sharpening my SQL, exploring new BI features, or reading about how data teams ship value in the real world. I like **learning by doing** and sharing what actually worked.",
+      "I'm drawn to work that combines **analytical depth** with **business clarity** — the kind of analyst who is trusted in the room where decisions get made.",
     ],
   },
   connectLinks: [
     {
       name: "Email",
-      href: "mailto:priyanshuurmaliya23011@gmail.com",
+      href: "mailto:princekumarmandal78@gmail.com",
       icon: "mail" as const,
     },
     {
-      name: "X",
-      href: "https://x.com/imdevPU23",
-      icon: "x" as const,
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/princekumar",
+      icon: "linkedin" as const,
     },
     {
       name: "GitHub",
-      href: "https://github.com/GitHpriyanshu23",
+      href: "https://github.com/killersbEE08",
       icon: "github" as const,
     },
   ],

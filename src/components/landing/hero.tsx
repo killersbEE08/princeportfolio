@@ -44,8 +44,8 @@ export function Hero() {
         <div className="corner-frame relative h-[calc(var(--grid-cell-size)*4)] overflow-visible">
           <div className="relative size-full overflow-hidden border border-foreground/15">
           <Image
-            src="/assets/priyanshu-header.jpeg"
-            alt="Priyanshu header"
+            src="/assets/header.jpeg"
+            alt="Prince Kumar header"
             fill
             priority
             sizes="(max-width: 640px) 100vw, 720px"

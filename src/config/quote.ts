@@ -1,14 +1,14 @@
 export const quoteConfig = {
-  text: "Success is not final, failure is not fatal: it is the courage to continue that counts.",
-  author: "Winston Churchill",
+  text: "Without data, you're just another person with an opinion.",
+  author: "W. Edwards Deming",
 };
 
 export const rotatingTitles = [
-  "AI Engineer",
-  "Full Stack Developer",
-  "Software Engineer",
-  "Traveller",
-  "Curious Builder",
-  "Creator",
-  "Always ready to learn new things"
+  "Data Analyst",
+  "Business Analyst",
+  "Data Engineering Enthusiast",
+  "SQL & Power BI",
+  "Python & RAG",
+  "Data Storyteller",
+  "Always ready to learn new things",
 ];

@@ -6,8 +6,8 @@ import { achievements } from "@/config/achievements";
 import { createPageMetadata, pageTitle } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: pageTitle("Achievements"),
-  description: "Hackathon wins, awards, and milestones from Priyanshu Urmaliya.",
+  title: pageTitle("Certifications"),
+  description: "Certifications and credentials earned by Prince Kumar.",
   path: "/achievements",
 });
 
@@ -22,9 +22,9 @@ export default function AchievementsPage() {
           <ArrowLeft className="size-4" />
           Back home
         </Link>
-        <h1 className="text-3xl font-bold tracking-tight">Achievements</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Certifications</h1>
         <p className="mt-3 max-w-xl text-secondary">
-          Awards, hackathon results, and milestones.
+          Professional certificates and credentials.
         </p>
       </Container>
 

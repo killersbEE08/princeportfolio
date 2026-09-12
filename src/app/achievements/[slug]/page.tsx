@@ -47,7 +47,7 @@ export default async function AchievementDetailPage({
           className="inline-flex items-center gap-1.5 text-sm text-secondary transition-colors hover:text-foreground"
         >
           <ArrowLeft className="size-4" />
-          Back to achievements
+          Back to certifications
         </Link>
 
         <LiquidGlassCard

@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   devIndicators: false,
+  // Pin the tracing root to this project so a stray lockfile in a parent
+  // directory doesn't get picked up as the workspace root.
+  outputFileTracingRoot: __dirname,
   images: {
     remotePatterns: [
       {

@@ -1,25 +1,27 @@
 export const education = [
   {
-    school: "IPS Academy Indore",
-    degree: "Bachelor of Technology · Computer Software Engineering",
-    period: "2022—2026",
+    school: "Dr. B.R. Ambedkar University Delhi (AUD)",
+    degree:
+      "Master of Business Administration (MBA) · Business Analytics",
+    period: "2024—2027",
   },
   {
-    school: "Kendriya Vidyalaya",
-    degree: "Mathematics & Science",
-    period: "2008—2021",
+    school: "University of Delhi",
+    degree: "Bachelor of Arts",
+    period: "2021—2024",
   },
 ];
 
 export const skills = [
+  "SQL",
+  "Power BI",
+  "DAX",
+  "Advanced Excel",
   "Python",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "FastAPI",
-  "Machine Learning",
+  "Google Analytics 4",
+  "Data Modeling",
+  "ETL / Data Pipelines",
+  "A/B Testing",
   "RAG",
-  "LLMs",
-  "IoT",
-  "Docker",
+  "Data Storytelling",
 ];
