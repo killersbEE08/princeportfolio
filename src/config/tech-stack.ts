@@ -9,10 +9,10 @@ export type TechItem = {
 };
 
 export const techStack: TechItem[] = [
-  { name: "SQL", icon: "" },
-  { name: "Power BI", icon: "" },
-  { name: "Excel", icon: "" },
-  { name: "DAX", icon: "" },
+  { name: "SQL", icon: "/assets/tech/sql.svg" },
+  { name: "Power BI", icon: "/assets/tech/powerbi.svg" },
+  { name: "Excel", icon: "/assets/tech/excel.svg" },
+  { name: "DAX", icon: "/assets/tech/dax.svg" },
   { name: "Python", icon: "python" },
   { name: "Pandas", icon: "pandas" },
   { name: "NumPy", icon: "numpy" },

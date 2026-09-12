@@ -8,19 +8,7 @@ import { LiquidGlassCard } from "@/components/ui/liquid-glass";
 import { lastPlayedTrack } from "@/config/spotify";
 import { cn } from "@/lib/utils";
 
-type SpotifyTrackState = {
-  title: string;
-  artist: string;
-  album: string;
-  albumArt: string;
-  songUrl: string;
-  previewUrl: string | null;
-  isPlaying: boolean;
-  isLive: boolean;
-  setupRequired?: boolean;
-};
-
-const staticTrack = {
+const track = {
   title: lastPlayedTrack.title,
   artist: lastPlayedTrack.artist,
   album: lastPlayedTrack.album,
@@ -29,70 +17,29 @@ const staticTrack = {
   previewUrl: lastPlayedTrack.audioSrc || null,
 };
 
-const fallbackStatus: SpotifyTrackState = {
-  ...staticTrack,
-  isPlaying: false,
-  isLive: false,
-};
+const APPLE_MUSIC_RED = "#FA233B";
 
 export function SpotifyLastPlayed() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [spotifyStatus, setSpotifyStatus] =
-    useState<SpotifyTrackState>(fallbackStatus);
-  const [isPlayingOnSite, setIsPlayingOnSite] = useState(false);
-
-  const playableSource = staticTrack.previewUrl ?? spotifyStatus.previewUrl;
-  const statusLabel = spotifyStatus.isLive ? "Listening now" : "Last listened";
-  const statusTrack = spotifyStatus.title
-    ? `${spotifyStatus.title} · ${spotifyStatus.artist}`
-    : `${staticTrack.title} · ${staticTrack.artist}`;
-
-  useEffect(() => {
-    let mounted = true;
-
-    async function loadSpotifyStatus() {
-      try {
-        const response = await fetch("/api/spotify/now-playing", {
-          cache: "no-store",
-        });
-
-        if (!response.ok) return;
-
-        const nextStatus = (await response.json()) as SpotifyTrackState;
-
-        if (mounted) {
-          setSpotifyStatus(nextStatus);
-        }
-      } catch {
-        // Keep the static fallback if Spotify is unreachable.
-      }
-    }
-
-    void loadSpotifyStatus();
-    const interval = window.setInterval(() => void loadSpotifyStatus(), 20_000);
-
-    return () => {
-      mounted = false;
-      window.clearInterval(interval);
-    };
-  }, []);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const playable = track.previewUrl;
 
   useEffect(() => {
     const audio = audioRef.current;
-    if (!audio || !playableSource) return;
+    if (!audio || !playable) return;
 
-    if (isPlayingOnSite) {
-      audio.play().catch(() => setIsPlayingOnSite(false));
+    if (isPlaying) {
+      audio.play().catch(() => setIsPlaying(false));
     } else {
       audio.pause();
     }
-  }, [isPlayingOnSite, playableSource]);
+  }, [isPlaying, playable]);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    const handleEnded = () => setIsPlayingOnSite(false);
+    const handleEnded = () => setIsPlaying(false);
     audio.addEventListener("ended", handleEnded);
 
     return () => audio.removeEventListener("ended", handleEnded);
@@ -107,25 +54,25 @@ export function SpotifyLastPlayed() {
       className="w-full p-3"
       contentClassName="relative z-10"
     >
-      <audio ref={audioRef} src={playableSource ?? undefined} preload="metadata" />
+      <audio ref={audioRef} src={playable ?? undefined} preload="metadata" />
 
       <div className="flex items-center gap-3">
         <div className="relative flex h-[84px] w-[108px] shrink-0 items-center">
           <button
             type="button"
-            onClick={() => setIsPlayingOnSite((current) => !current)}
-            disabled={!playableSource}
-            aria-label={isPlayingOnSite ? `Pause ${staticTrack.title}` : `Play ${staticTrack.title}`}
+            onClick={() => setIsPlaying((current) => !current)}
+            disabled={!playable}
             className="group relative z-20 size-20 overflow-hidden rounded-full bg-black shadow-[0_10px_24px_rgba(0,0,0,0.18)] ring-1 ring-black/15 transition-transform hover:scale-[1.02] disabled:cursor-not-allowed"
+            aria-label={isPlaying ? `Pause ${track.title}` : `Play ${track.title}`}
           >
             <Image
-              src={staticTrack.albumArt}
-              alt={`${staticTrack.title} album art`}
+              src={track.albumArt}
+              alt={`${track.title} album art`}
               fill
               sizes="80px"
               className={cn(
                 "rounded-full object-cover",
-                isPlayingOnSite && "animate-vinyl-spin",
+                isPlaying && "animate-vinyl-spin",
               )}
               priority={false}
             />
@@ -134,54 +81,56 @@ export function SpotifyLastPlayed() {
           <div
             className={cn(
               "pointer-events-none absolute right-1 top-2 z-30 h-4 w-10 origin-right transition-transform duration-700 ease-out",
-              isPlayingOnSite ? "rotate-0" : "rotate-[18deg]",
+              isPlaying ? "rotate-0" : "rotate-[18deg]",
             )}
           >
             <span className="absolute right-0 top-1/2 size-4 -translate-y-1/2 rounded-full bg-neutral-500 shadow-[0_2px_4px_rgba(0,0,0,0.25)]" />
             <span className="absolute right-2 top-1/2 h-1 w-9 -translate-y-1/2 rounded-full bg-neutral-500 shadow-[0_2px_4px_rgba(0,0,0,0.18)]" />
-            <span className="absolute -left-0.5 top-1/2 size-2.5 -translate-y-1/2 rounded-full bg-[#1DB954] shadow-sm" />
+            <span
+              className="absolute -left-0.5 top-1/2 size-2.5 -translate-y-1/2 rounded-full shadow-sm"
+              style={{ backgroundColor: APPLE_MUSIC_RED }}
+            />
           </div>
         </div>
 
         <div className="min-w-0 flex-1">
           <p className="flex items-center gap-1.5 text-[10px] font-medium text-secondary">
             <span
-              className={cn(
-                "size-1.5 rounded-full",
-                spotifyStatus.isLive ? "bg-emerald-500" : "bg-secondary/60",
-              )}
+              className="size-1.5 rounded-full"
+              style={{ backgroundColor: APPLE_MUSIC_RED }}
             />
-            {spotifyStatus.isLive ? "Live" : "Favorite"}
+            Apple Music
           </p>
 
           <Link
-            href={staticTrack.songUrl}
+            href={track.songUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-0.5 block truncate text-sm font-semibold text-foreground hover:underline"
           >
-            {staticTrack.title}
+            {track.title}
           </Link>
-          <p className="truncate text-xs text-secondary">{staticTrack.artist}</p>
+          <p className="truncate text-xs text-secondary">{track.artist}</p>
 
           <Link
-            href={spotifyStatus.songUrl || staticTrack.songUrl}
+            href={track.songUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 block truncate text-[10px] text-secondary underline-offset-2 hover:text-foreground hover:underline"
           >
-            {statusLabel}: {statusTrack}
+            My favorite · {track.album}
           </Link>
         </div>
 
         <button
           type="button"
-          onClick={() => setIsPlayingOnSite((current) => !current)}
-          disabled={!playableSource}
-          className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#1DB954] text-white shadow-sm transition hover:scale-105 disabled:cursor-not-allowed disabled:opacity-40"
-          aria-label={isPlayingOnSite ? `Pause ${staticTrack.title}` : `Play ${staticTrack.title}`}
+          onClick={() => setIsPlaying((current) => !current)}
+          disabled={!playable}
+          className="flex size-9 shrink-0 items-center justify-center rounded-full text-white shadow-sm transition hover:scale-105 disabled:cursor-not-allowed disabled:opacity-40"
+          style={{ backgroundColor: APPLE_MUSIC_RED }}
+          aria-label={isPlaying ? `Pause ${track.title}` : `Play ${track.title}`}
         >
-          {isPlayingOnSite ? (
+          {isPlaying ? (
             <Pause className="size-4" weight="fill" />
           ) : (
             <Play className="ml-0.5 size-4" weight="fill" />
@@ -189,9 +138,9 @@ export function SpotifyLastPlayed() {
         </button>
       </div>
 
-      {!playableSource && (
+      {!playable && (
         <p className="mt-2 text-[10px] leading-relaxed text-secondary">
-          Add an audio file to enable website playback.
+          Add an audio preview to enable playback.
         </p>
       )}
     </LiquidGlassCard>

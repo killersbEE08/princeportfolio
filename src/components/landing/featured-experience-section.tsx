@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Container } from "@/components/container";
 import { achievements, type Achievement } from "@/config/achievements";
 import { experience, type ExperienceItem } from "@/config/experience";
-import { getTechIcon } from "@/lib/tech-icons";
+import { getTechIcon, techIconSrc } from "@/lib/tech-icons";
 
 type FeaturedItem =
   | {
@@ -74,7 +74,7 @@ function TechPill({ name }: { name: string }) {
     <span className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background/70 px-3 py-1.5 text-sm font-semibold text-foreground shadow-sm">
       {showIcon && (
         <Image
-          src={`https://cdn.simpleicons.org/${icon}`}
+          src={techIconSrc(icon!)}
           alt=""
           width={16}
           height={16}

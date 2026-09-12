@@ -4,7 +4,7 @@ import { ArrowRight, GithubLogo, Globe } from "@phosphor-icons/react/dist/ssr";
 import { Container } from "@/components/container";
 import { LiquidGlassCard } from "@/components/ui/liquid-glass";
 import { projects, type Project } from "@/config/projects";
-import { getTechIcon } from "@/lib/tech-icons";
+import { getTechIcon, techIconSrc } from "@/lib/tech-icons";
 import { cn } from "@/lib/utils";
 
 export function ProjectCard({ project, index = 0 }: { project: Project; index?: number }) {
@@ -92,7 +92,7 @@ export function ProjectCard({ project, index = 0 }: { project: Project; index?: 
                   className="flex size-7 items-center justify-center rounded-md bg-background/70 shadow-sm ring-1 ring-border/60 dark:bg-white/95"
                 >
                   <Image
-                    src={`https://cdn.simpleicons.org/${icon}`}
+                    src={techIconSrc(icon)}
                     alt={tech}
                     width={16}
                     height={16}
