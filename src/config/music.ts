@@ -1,7 +1,12 @@
 // Favorite song shown in the hero card (Apple Music).
-// Data sourced from Apple's iTunes API — album art, track link, and a
-// 30-second preview clip for on-site playback.
-export const lastPlayedTrack = {
+// Values come from Apple's free iTunes API — album art, track link, and a
+// 30-second preview clip for on-site playback (no developer account needed).
+//
+// To change the song:
+//   1. Hit https://itunes.apple.com/search?term=SONG+ARTIST&entity=song
+//   2. Copy `trackViewUrl` -> songUrl, `previewUrl` -> audioSrc
+//   3. Take `artworkUrl100` and swap `100x100bb.jpg` for `400x400bb.jpg` -> albumArt
+export const favoriteTrack = {
   title: "Hamari Saanson Mein Aaj Tak",
   artist: "Mehdi Hassan",
   album: "The Definitive Collection, Vol. 3",

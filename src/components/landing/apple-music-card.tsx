@@ -5,21 +5,21 @@ import Link from "next/link";
 import { Pause, Play } from "@phosphor-icons/react";
 import { useEffect, useRef, useState } from "react";
 import { LiquidGlassCard } from "@/components/ui/liquid-glass";
-import { lastPlayedTrack } from "@/config/spotify";
+import { favoriteTrack } from "@/config/music";
 import { cn } from "@/lib/utils";
 
 const track = {
-  title: lastPlayedTrack.title,
-  artist: lastPlayedTrack.artist,
-  album: lastPlayedTrack.album,
-  albumArt: lastPlayedTrack.albumArt,
-  songUrl: lastPlayedTrack.songUrl,
-  previewUrl: lastPlayedTrack.audioSrc || null,
+  title: favoriteTrack.title,
+  artist: favoriteTrack.artist,
+  album: favoriteTrack.album,
+  albumArt: favoriteTrack.albumArt,
+  songUrl: favoriteTrack.songUrl,
+  previewUrl: favoriteTrack.audioSrc || null,
 };
 
 const APPLE_MUSIC_RED = "#FA233B";
 
-export function SpotifyLastPlayed() {
+export function AppleMusicCard() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const playable = track.previewUrl;

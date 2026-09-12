@@ -15,7 +15,7 @@ import {
 import { ProfileAvatar } from "@/components/profile-avatar";
 import { Container } from "@/components/container";
 import { RotatingTitle } from "@/components/landing/rotating-title";
-import { SpotifyLastPlayed } from "@/components/landing/spotify-last-played";
+import { AppleMusicCard } from "@/components/landing/apple-music-card";
 import { TimezoneWidget } from "@/components/landing/timezone-widget";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { heroConfig, socialLinks } from "@/config/hero";
@@ -122,7 +122,7 @@ export function Hero() {
         </div>
 
         <div className="max-w-full pt-1">
-          <SpotifyLastPlayed />
+          <AppleMusicCard />
         </div>
       </div>
     </Container>
