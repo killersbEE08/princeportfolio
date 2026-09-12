@@ -1,6 +1,6 @@
 export const heroConfig = {
   name: "Prince Kumar",
-  email: "princekumarmandal78@gmail.com",
+  email: "hello@princelabs.in",
   bio: "Data & Business Analyst turning raw data into decisions with SQL, Power BI, and Python — and exploring data engineering and RAG-powered analytics.",
   avatar: "/assets/avatar.png",
   avatarSmile: "/assets/avatar-smile.png",
@@ -26,7 +26,7 @@ export const socialLinks = [
   },
   {
     name: "Mail",
-    href: "mailto:princekumarmandal78@gmail.com",
+    href: "mailto:hello@princelabs.in",
     icon: "mail" as const,
   },
   {

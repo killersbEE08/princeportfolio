@@ -66,7 +66,7 @@ export const aboutConfig = {
   connectLinks: [
     {
       name: "Email",
-      href: "mailto:princekumarmandal78@gmail.com",
+      href: "mailto:hello@princelabs.in",
       icon: "mail" as const,
     },
     {
