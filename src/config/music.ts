@@ -7,14 +7,14 @@
 //   2. Copy `trackViewUrl` -> songUrl, `previewUrl` -> audioSrc
 //   3. Take `artworkUrl100` and swap `100x100bb.jpg` for `400x400bb.jpg` -> albumArt
 export const favoriteTrack = {
-  title: "Hamari Saanson Mein Aaj Tak",
-  artist: "Mehdi Hassan",
-  album: "The Definitive Collection, Vol. 3",
+  title: "God Mode Begins",
+  artist: "Sai Abhyankkar",
+  album: "Karuppu (Original Motion Picture Soundtrack)",
   albumArt:
-    "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/06/ab/18/06ab1860-b85b-3eb2-4492-a6dcea7b9f9b/197187357413.jpg/400x400bb.jpg",
+    "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d4/c4/38/d4c43885-7866-3ac4-e323-b9ca6a7621ec/cover.jpg/400x400bb.jpg",
   songUrl:
-    "https://music.apple.com/us/album/hamari-saanson-mein-aaj-tak/1653187009?i=1653187033",
+    "https://music.apple.com/us/album/god-mode-begins/6773013206?i=6773013478",
   /** 30s Apple Music preview clip used for the on-site play button. */
   audioSrc:
-    "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/f4/70/75/f4707574-e5e8-26ee-7fd6-836e5766e8f0/mzaf_13814618967937012180.plus.aac.p.m4a",
+    "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/38/86/d0/3886d08d-1e96-dc45-d4fd-9138fc7748a3/mzaf_13976698916373719684.plus.aac.p.m4a",
 };
