@@ -115,16 +115,16 @@ export function SpotifyLastPlayed() {
             type="button"
             onClick={() => setIsPlayingOnSite((current) => !current)}
             disabled={!playableSource}
+            aria-label={isPlayingOnSite ? `Pause ${staticTrack.title}` : `Play ${staticTrack.title}`}
             className="group relative z-20 size-20 overflow-hidden rounded-full bg-black shadow-[0_10px_24px_rgba(0,0,0,0.18)] ring-1 ring-black/15 transition-transform hover:scale-[1.02] disabled:cursor-not-allowed"
-            aria-label={isPlayingOnSite ? "Pause Apocalypse" : "Play Apocalypse"}
           >
             <Image
-              src="/assets/apocalypse-vinyl.png"
-              alt="Apocalypse vinyl record"
+              src={staticTrack.albumArt}
+              alt={`${staticTrack.title} album art`}
               fill
               sizes="80px"
               className={cn(
-                "rounded-full object-contain",
+                "rounded-full object-cover",
                 isPlayingOnSite && "animate-vinyl-spin",
               )}
               priority={false}
@@ -179,7 +179,7 @@ export function SpotifyLastPlayed() {
           onClick={() => setIsPlayingOnSite((current) => !current)}
           disabled={!playableSource}
           className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#1DB954] text-white shadow-sm transition hover:scale-105 disabled:cursor-not-allowed disabled:opacity-40"
-          aria-label={isPlayingOnSite ? "Pause Apocalypse" : "Play Apocalypse"}
+          aria-label={isPlayingOnSite ? `Pause ${staticTrack.title}` : `Play ${staticTrack.title}`}
         >
           {isPlayingOnSite ? (
             <Pause className="size-4" weight="fill" />
