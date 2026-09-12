@@ -5,14 +5,50 @@ date: "2025"
 tech: ["Python", "RAG", "SQL", "LLMs"]
 ---
 
-An experiment in making analytics **conversational** — ask a question in plain English, get a source-cited answer.
+An experiment in making analytics **conversational** — ask a business question in
+plain English and get a source-cited answer grounded in real reports and data.
 
-## What it does
+## Context
 
-- Retrieval-augmented generation over business reports and structured data
-- Natural-language questions mapped to SQL and document retrieval
-- Source-cited answers so every number can be traced back to its origin
+Dashboards are great at answering the questions you anticipated. But stakeholders
+constantly ask new, one-off questions ("why did returns spike in the north region
+last week?") that don't fit an existing chart. Answering those means someone
+manually digging through reports and writing SQL.
 
-## Why I built it
+## The problem
 
-Dashboards answer the questions you anticipated. I wanted to explore how RAG and LLMs can answer the ones you didn't — while keeping the rigor and traceability analytics demands.
+How do you let non-technical users ask ad-hoc questions and get **trustworthy**,
+**traceable** answers — without an analyst in the loop for every request?
+
+## Approach
+
+1. **Ingestion.** Business reports and documents are chunked and embedded into a
+   vector store for semantic retrieval.
+2. **Retrieval + generation.** For each question, the system retrieves the most
+   relevant chunks (and, where applicable, maps the question to a SQL query over
+   structured data), then an LLM composes an answer from that grounded context.
+3. **Source citations.** Every answer links back to the exact source it used, so
+   numbers can be verified rather than trusted blindly.
+
+## Architecture (high level)
+
+```
+Question → retrieve relevant context (docs + SQL results)
+        → LLM composes a grounded answer
+        → return answer + source citations
+```
+
+## Why it matters for analytics
+
+- **Traceability:** citations keep the rigor analytics demands — no hallucinated
+  numbers passed off as fact.
+- **Speed:** routine "what/why" questions get answered without a full analyst
+  cycle.
+- **Accessibility:** non-technical stakeholders can self-serve in plain language.
+
+## What I learned
+
+RAG is only as good as its retrieval and its guardrails. For analytics
+specifically, **traceability beats fluency** — an answer you can't verify is
+worse than no answer. Designing for citations from the start is what makes a RAG
+assistant usable in a business context.

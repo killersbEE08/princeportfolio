@@ -14,14 +14,19 @@ export const education = [
 
 export const skills = [
   "SQL",
+  "Advanced Excel",
   "Power BI",
   "DAX",
-  "Advanced Excel",
+  "Google Sheets",
   "Python",
   "Google Analytics 4",
+  "Data Analysis",
+  "Data Cleaning",
   "Data Modeling",
   "ETL / Data Pipelines",
+  "Business Analytics",
   "A/B Testing",
+  "CRM Tools",
   "RAG",
   "Data Storytelling",
 ];

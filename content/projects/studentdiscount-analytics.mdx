@@ -5,14 +5,49 @@ date: "2025"
 tech: ["Google Analytics 4", "Search Console", "Funnel Analysis"]
 ---
 
-Product analytics for a live web product, owned end to end.
+Product analytics for a live web product, owned end to end — from defining what
+to measure, to turning behavior data into decisions about what to build next.
 
-## What it does
+## Context
 
-- A GA4 measurement plan designed from scratch — custom events, goals, and dimensions tracking the full user journey from acquisition through retention
-- Funnel drop-off and retention analysis used to iterate on site architecture and content, improving session depth and return-visitor rate
-- Search-trend and keyword-demand analysis to prioritize the content roadmap, with channel CAC compared via cost-benefit analysis to guide budget
+StudentDiscount.tech is a content-and-offers product where growth depends on two
+things: getting the right visitors in, and keeping them engaged. When I started,
+there was no structured measurement — just default pageview tracking that
+couldn't answer product questions.
 
-## Why it matters
+## The problem
 
-Most analytics setups measure vanity metrics. This one was built to answer product questions and directly shape what got built next.
+You can't improve what you can't see. Without a proper measurement plan, we were
+guessing about where users dropped off, which content mattered, and which
+acquisition channels were actually worth the spend.
+
+## Approach
+
+1. **Measurement plan from scratch.** I defined a GA4 event taxonomy — custom
+   events, conversions, and dimensions — mapping the full journey from
+   acquisition through activation and retention.
+2. **Funnel & retention analysis.** I built funnels to find the biggest drop-off
+   points and tracked return-visitor behavior over time.
+3. **Search-informed content roadmap.** Using Search Console and keyword-demand
+   data, I prioritized content by real search intent rather than guesswork.
+4. **Channel economics.** I compared acquisition channels on a cost-benefit
+   basis to guide where effort and budget should go.
+
+## What I measured
+
+- Acquisition → activation → retention funnel with clear drop-off stages.
+- Session depth and return-visitor rate as engagement signals.
+- Channel-level CAC vs. value to inform budget allocation.
+
+## Results & impact
+
+- A defined, reusable GA4 measurement framework replaced ad-hoc tracking.
+- Funnel insights drove concrete changes to site architecture and content that
+  improved session depth and return-visitor rate.
+- Content and channel decisions became evidence-based instead of intuition-based.
+
+## What I learned
+
+Most analytics setups measure vanity metrics. Designing the measurement plan
+*around the product decisions* — before touching a dashboard — is what turns
+analytics into a growth tool.

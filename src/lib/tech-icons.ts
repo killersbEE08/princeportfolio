@@ -1,7 +1,9 @@
 export const techIconMap: Record<string, string> = {
   // Local brand logos (not available on simple-icons).
   "Power BI": "/assets/tech/powerbi.svg",
+  "Microsoft Power BI": "/assets/tech/powerbi.svg",
   Excel: "/assets/tech/excel.svg",
+  "Microsoft Excel": "/assets/tech/excel.svg",
   "Advanced Excel": "/assets/tech/excel.svg",
   SQL: "/assets/tech/sql.svg",
   DAX: "/assets/tech/dax.svg",
@@ -11,6 +13,7 @@ export const techIconMap: Record<string, string> = {
   NumPy: "numpy",
   PostgreSQL: "postgresql",
   MySQL: "mysql",
+  "Google Sheets": "googlesheets",
   "Google Analytics": "googleanalytics",
   "Google Analytics 4": "googleanalytics",
   "Search Console": "googlesearchconsole",

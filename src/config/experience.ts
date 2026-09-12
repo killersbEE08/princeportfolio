@@ -14,6 +14,22 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
+    company: "Broz Media",
+    role: "Data Operations Intern",
+    periodShort: "May 26 – Jul 26",
+    periodLong: "May 2026 – July 2026",
+    locationShort: "New Delhi, IN",
+    locationLong: "New Delhi, India",
+    details: [
+      "Managed and analyzed influencer marketing and business operations data to support campaign decision-making and operational efficiency.",
+      "Worked with large datasets in Excel and Google Sheets for data cleaning, validation, reporting, and performance tracking.",
+      "Monitored campaign KPIs, influencer performance metrics, and operational reports to derive actionable business insights.",
+      "Conducted influencer and market research to support brand collaborations and data-driven marketing strategies.",
+      "Collaborated with cross-functional teams to streamline workflows, improve reporting accuracy, and optimize data processes.",
+    ],
+    tech: ["Excel", "Google Sheets", "SQL", "Power BI", "CRM Tools", "Data Analysis"],
+  },
+  {
     company: "Tidalwave Solution Pvt Ltd",
     role: "Digital Marketing Specialist · Data & Analytics",
     periodShort: "Sep 23 – Nov 24",

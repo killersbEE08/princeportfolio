@@ -12,6 +12,7 @@ export const techStack: TechItem[] = [
   { name: "SQL", icon: "/assets/tech/sql.svg" },
   { name: "Power BI", icon: "/assets/tech/powerbi.svg" },
   { name: "Excel", icon: "/assets/tech/excel.svg" },
+  { name: "Google Sheets", icon: "googlesheets" },
   { name: "DAX", icon: "/assets/tech/dax.svg" },
   { name: "Python", icon: "python" },
   { name: "Pandas", icon: "pandas" },

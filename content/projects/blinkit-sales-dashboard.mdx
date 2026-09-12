@@ -5,14 +5,60 @@ date: "2025"
 tech: ["Power BI", "SQL", "DAX", "Data Modeling"]
 ---
 
-A complete Power BI solution built to answer one question: **where is our revenue really coming from, and what should we do about it?**
+A complete Power BI solution built to answer one question the business actually
+cared about: **where is our revenue really coming from, and what should we do
+about it?**
 
-## What it does
+## Context
 
-- Interactive dashboard analyzing sales performance across product categories, outlet types, and geographic locations
-- DAX measures and a clean data model tracking revenue trends, outlet performance, and item-level insights
-- Category-level views that support strategic, data-driven merchandising decisions
+Blinkit-style quick-commerce generates a huge amount of transactional data across
+product categories, outlet types, and locations. The raw numbers were available,
+but nobody could quickly answer "which outlet types are underperforming?" or
+"which categories drive the most revenue in which regions?" without manually
+slicing spreadsheets.
+
+## The questions I set out to answer
+
+- **Where is revenue concentrated** across product categories and outlet types?
+- **Which outlets underperform** relative to similar ones, and by how much?
+- **What item-level patterns** should drive the next merchandising decision?
+
+## Data & tools
+
+- **Source data:** item-level sales with attributes for category, outlet type,
+  outlet size, location tier, and item visibility/weight.
+- **SQL:** cleaned and shaped the raw tables — handling missing weights,
+  standardizing category labels, and deriving fields before modeling.
+- **Power BI + DAX:** a star-style data model with reusable measures for total
+  sales, average sales, item count, and sales per outlet.
 
 ## Approach
 
-I modeled the raw sales data, wrote reusable DAX measures for revenue and performance KPIs, and designed the report around the decisions stakeholders actually needed to make — not just the charts that looked good.
+1. **Model first.** I built a clean data model instead of loading a flat table,
+   so filters (category, outlet type, location) propagate correctly across every
+   visual.
+2. **Reusable DAX measures.** Revenue, average selling price, and outlet
+   performance were written once as measures and reused everywhere — no
+   copy-pasted calculations.
+3. **Decision-led layout.** I designed the report around the three questions
+   above, not around "every chart I could make." Anything that didn't help a
+   decision came off the canvas.
+
+## What the dashboard shows
+
+- Revenue by product category and by outlet type, with drill-down.
+- Outlet-level performance ranked against peers of the same size/type.
+- Item-level insights (top and bottom performers) to guide assortment decisions.
+
+## Results & impact
+
+- Turned a manual, spreadsheet-heavy reporting process into a single interactive
+  view stakeholders could self-serve.
+- Surfaced clear category- and outlet-level patterns that support merchandising
+  and expansion decisions.
+
+## What I learned
+
+A dashboard full of accurate charts can still fail if nobody knows what to do
+after looking at it. Starting from the **decision** — not the data — is what
+makes analytics actually useful.
