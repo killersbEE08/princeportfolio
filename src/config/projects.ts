@@ -25,16 +25,15 @@ export const projects: Project[] = [
     gradient: "from-yellow-500/25 via-amber-500/15 to-orange-500/25",
   },
   {
-    slug: "studentdiscount-analytics",
-    title: "StudentDiscount.tech — Product Analytics",
+    slug: "customer-churn-analysis",
+    title: "Customer Churn Analysis",
     date: "2025",
     description:
-      "A GA4 measurement plan built from scratch — custom events, goals, and dimensions tracking the full user journey from acquisition to retention. Funnel and retention analysis drove content and site-architecture decisions that improved session depth and return-visitor rate.",
-    tech: ["Google Analytics 4", "Search Console", "Funnel Analysis"],
+      "An end-to-end churn analysis using SQL and Python to quantify which factors drive customer churn, turning the findings into concrete retention recommendations and a summary dashboard.",
+    tech: ["SQL", "Python", "Pandas", "Power BI"],
     href: "https://github.com/killersbEE08",
-    website: "https://studentdiscount.tech",
     featured: true,
-    gradient: "from-emerald-500/25 via-green-500/15 to-lime-500/25",
+    gradient: "from-rose-500/25 via-pink-500/15 to-fuchsia-500/25",
   },
   {
     slug: "rag-analytics-assistant",

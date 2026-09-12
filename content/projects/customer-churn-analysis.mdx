@@ -1,0 +1,64 @@
+---
+title: "Customer Churn Analysis"
+description: "SQL + Python analysis quantifying churn drivers and turning them into retention recommendations."
+date: "2025"
+tech: ["SQL", "Python", "Pandas", "Power BI"]
+---
+
+An end-to-end analysis to answer a question every subscription business loses
+sleep over: **who is about to churn, and why?**
+
+## Context
+
+Acquiring a customer costs far more than keeping one, yet most churn is only
+noticed after it happens. The goal here was to move from "we lost customers" to
+"here are the specific factors driving churn, and what to do about them."
+
+## The questions
+
+- **Which customer segments churn the most** (contract type, tenure, service mix)?
+- **Which factors most strongly associate with churn**, and how strongly?
+- **What concrete actions** would reduce it?
+
+## Data & tools
+
+- **Dataset:** customer records with demographics, subscribed services, contract
+  and billing details, tenure, and a churn label.
+- **SQL:** extracted and aggregated the data, building cohort and segment-level
+  churn rates.
+- **Python (pandas):** cleaned the data, engineered features (tenure buckets,
+  services-per-customer, charge ratios) and analyzed churn drivers.
+- **Power BI:** summarized the findings in a stakeholder-friendly view.
+
+## Approach
+
+1. **Clean and prepare.** Handled missing and inconsistent values, converted
+   types, and engineered features that make churn patterns visible (e.g., tenure
+   bands).
+2. **Segment analysis.** Computed churn rates across contract types, tenure
+   bands, payment methods, and service bundles to find the highest-risk groups.
+3. **Driver analysis.** Ranked the factors most associated with churn and
+   validated them against segment cuts.
+4. **Recommendations.** Translated the strongest signals into targeted retention
+   actions.
+
+## Key findings
+
+- Month-to-month customers and those in their **first few months of tenure**
+  churn far more than long-tenure, annual-contract customers.
+- Certain payment methods and service combinations correlate with elevated churn.
+- A small set of high-risk segments accounts for a disproportionate share of
+  total churn — the obvious place to focus retention spend.
+
+## Recommendations
+
+- Prioritize onboarding and early-tenure engagement for new customers.
+- Incentivize longer contracts for the highest-risk month-to-month segment.
+- Target retention offers at the specific high-churn segments rather than
+  spending evenly across the whole base.
+
+## What I learned
+
+Churn analysis is only useful if it ends in an action. The hard part isn't the
+model or the SQL — it's translating "these factors correlate with churn" into a
+concrete, prioritized retention plan a business can actually execute.
