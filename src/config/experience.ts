@@ -6,6 +6,8 @@ export type ExperienceItem = {
   locationShort: string;
   locationLong: string;
   working?: boolean;
+  /** Optional company logo, e.g. "/assets/logos/tidalwave.png". Falls back to initials. */
+  logo?: string;
   details?: string[];
   tech?: string[];
 };

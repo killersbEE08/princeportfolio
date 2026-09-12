@@ -2,6 +2,7 @@ import { Hero } from "@/components/landing/hero";
 import { TechStackSection } from "@/components/landing/tech-stack-section";
 import { FeaturedExperienceSection } from "@/components/landing/featured-experience-section";
 import { FeaturedProjects } from "@/components/landing/featured-projects";
+import { AchievementsSection } from "@/components/landing/achievements-section";
 import { GitHubContributions } from "@/components/landing/github-contributions";
 import { QuoteVisitorCard } from "@/components/landing/quote-visitor-card";
 import { siteConfig } from "@/config/meta";
@@ -20,6 +21,7 @@ export default function HomePage() {
       <TechStackSection />
       <FeaturedExperienceSection />
       <FeaturedProjects />
+      <AchievementsSection showAllLink />
       <GitHubContributions />
       <QuoteVisitorCard />
     </div>

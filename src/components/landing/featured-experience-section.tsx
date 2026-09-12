@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { Container } from "@/components/container";
 import { achievements, type Achievement } from "@/config/achievements";
 import { experience, type ExperienceItem } from "@/config/experience";
+import { getTechIcon } from "@/lib/tech-icons";
 
 type FeaturedItem =
   | {
@@ -30,19 +32,6 @@ type FeaturedItem =
       href: string;
     };
 
-const techIcons: Record<string, string> = {
-  "Data Pipelines": "apacheairflow",
-  "Feature Engineering": "scikitlearn",
-  IoT: "arduino",
-  "Machine Learning": "tensorflow",
-  Nextjs: "nextdotjs",
-  "Next.js": "nextdotjs",
-  PostgreSQL: "postgresql",
-  Python: "python",
-  React: "react",
-  TypeScript: "typescript",
-};
-
 const achievementTech: Record<string, string[]> = {
   "sih-2025": ["Python", "React", "TypeScript", "Machine Learning"],
   "sih-2024": ["Next.js", "React", "TypeScript", "PostgreSQL"],
@@ -55,7 +44,7 @@ function experienceToFeatured(item: ExperienceItem): FeaturedItem {
     subtitle: item.role,
     period: item.periodLong,
     location: item.locationLong.trim(),
-    image: "/assets/Valency-Energy-Logo.jpeg",
+    image: item.logo ?? "",
     details: item.details ?? [],
     tech: item.tech ?? [],
     href: "/work",
@@ -69,7 +58,7 @@ function achievementToFeatured(item: Achievement): FeaturedItem {
     subtitle: item.title,
     period: item.periodLong,
     location: "Achievement",
-    image: item.image ?? "/assets/og-image.jpg",
+    image: item.image ?? "",
     details: item.details ?? [],
     tech: achievementTech[item.slug] ?? [],
     href: `/achievements/${item.slug}`,
@@ -77,18 +66,23 @@ function achievementToFeatured(item: Achievement): FeaturedItem {
 }
 
 function TechPill({ name }: { name: string }) {
-  const icon = techIcons[name] ?? name.toLowerCase().replaceAll(" ", "");
+  const icon = getTechIcon(name);
+  const [failed, setFailed] = useState(false);
+  const showIcon = Boolean(icon) && !failed;
 
   return (
     <span className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background/70 px-3 py-1.5 text-sm font-semibold text-foreground shadow-sm">
-      <Image
-        src={`https://cdn.simpleicons.org/${icon}`}
-        alt=""
-        width={16}
-        height={16}
-        className="size-4 shrink-0"
-        unoptimized
-      />
+      {showIcon && (
+        <Image
+          src={`https://cdn.simpleicons.org/${icon}`}
+          alt=""
+          width={16}
+          height={16}
+          className="size-4 shrink-0"
+          unoptimized
+          onError={() => setFailed(true)}
+        />
+      )}
       {name}
     </span>
   );
@@ -109,15 +103,27 @@ function FeaturedExperienceItem({
       <div className="grid gap-4 sm:grid-cols-[88px_minmax(0,1fr)_auto] sm:items-start">
         <Link
           href={item.href}
-          className="relative size-16 overflow-hidden rounded-xl bg-muted shadow-sm transition-transform hover:scale-[1.02]"
+          className="relative flex size-16 items-center justify-center overflow-hidden rounded-xl bg-muted shadow-sm transition-transform hover:scale-[1.02]"
         >
-          <Image
-            src={item.image}
-            alt=""
-            fill
-            sizes="64px"
-            className="object-cover"
-          />
+          {item.image ? (
+            <Image
+              src={item.image}
+              alt=""
+              fill
+              sizes="64px"
+              className="object-cover"
+            />
+          ) : (
+            <span className="text-lg font-bold tracking-tight text-secondary">
+              {item.title
+                .split(" ")
+                .map((word) => word[0])
+                .filter(Boolean)
+                .slice(0, 2)
+                .join("")
+                .toUpperCase()}
+            </span>
+          )}
         </Link>
 
         <div className="min-w-0">
