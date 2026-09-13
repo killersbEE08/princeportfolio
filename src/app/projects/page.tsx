@@ -17,7 +17,7 @@ export default function ProjectsPage() {
         <p className="text-sm text-secondary">Featured</p>
         <h1 className="mt-1 text-3xl font-bold tracking-tight">Projects</h1>
         <p className="mt-3 text-secondary">
-          AI systems, RAG pipelines, and full-stack products I&apos;ve built along the way.
+          Dashboards, data models, and analytics projects I&apos;ve built along the way.
         </p>
       </Container>
       <ProjectsGrid items={projects} showHeading={false} />
