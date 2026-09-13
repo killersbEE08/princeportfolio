@@ -14,7 +14,6 @@ import {
 import { ProfileAvatar } from "@/components/profile-avatar";
 import { Container } from "@/components/container";
 import { RotatingTitle } from "@/components/landing/rotating-title";
-import { AppleMusicCard } from "@/components/landing/apple-music-card";
 import { TimezoneWidget } from "@/components/landing/timezone-widget";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { heroConfig, socialLinks } from "@/config/hero";
@@ -128,10 +127,6 @@ export function Hero() {
               </Tooltip>
             );
           })}
-        </div>
-
-        <div className="max-w-full pt-1">
-          <AppleMusicCard />
         </div>
       </div>
     </Container>

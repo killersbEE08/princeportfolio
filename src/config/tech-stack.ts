@@ -1,28 +1,43 @@
 export type TechItem = {
   name: string;
-  /**
-   * A simple-icons slug (e.g. "python"), an absolute URL, or a local path
-   * starting with "/". Leave empty ("") to render a text badge instead —
-   * useful for brands not available on simple-icons (Power BI, Excel, SQL).
-   */
+  /** simple-icons slug, an absolute URL, a local "/..." path, or "" for text-only. */
   icon: string;
 };
 
-export const techStack: TechItem[] = [
-  { name: "SQL", icon: "/assets/tech/sql.svg" },
-  { name: "Power BI", icon: "/assets/tech/powerbi.svg" },
-  { name: "Excel", icon: "/assets/tech/excel.svg" },
-  { name: "Google Sheets", icon: "googlesheets" },
-  { name: "DAX", icon: "/assets/tech/dax.svg" },
-  { name: "Python", icon: "python" },
-  { name: "Pandas", icon: "pandas" },
-  { name: "NumPy", icon: "numpy" },
-  { name: "PostgreSQL", icon: "postgresql" },
-  { name: "Google Analytics", icon: "googleanalytics" },
-  { name: "Search Console", icon: "googlesearchconsole" },
-  { name: "Jupyter", icon: "jupyter" },
-  { name: "OpenAI", icon: "openai" },
-  { name: "LangChain", icon: "langchain" },
-  { name: "Git", icon: "git" },
-  { name: "GitHub", icon: "github" },
+export type TechGroup = {
+  label: string;
+  items: TechItem[];
+};
+
+// Grouped by capability rather than a flat wall of logos — reads as
+// "here's how I solve analytical problems," not "everything I've touched."
+export const techGroups: TechGroup[] = [
+  {
+    label: "Analytics",
+    items: [
+      { name: "SQL", icon: "/assets/tech/sql.svg" },
+      { name: "Python", icon: "python" },
+      { name: "Power BI", icon: "/assets/tech/powerbi.svg" },
+      { name: "Excel", icon: "/assets/tech/excel.svg" },
+      { name: "DAX", icon: "/assets/tech/dax.svg" },
+    ],
+  },
+  {
+    label: "Data",
+    items: [
+      { name: "PostgreSQL", icon: "postgresql" },
+      { name: "Pandas", icon: "pandas" },
+      { name: "NumPy", icon: "numpy" },
+      { name: "Data Modeling", icon: "" },
+    ],
+  },
+  {
+    label: "Analytics Engineering / AI",
+    items: [
+      { name: "Git", icon: "git" },
+      { name: "RAG", icon: "" },
+      { name: "OpenAI", icon: "openai" },
+      { name: "LangChain", icon: "langchain" },
+    ],
+  },
 ];

@@ -8,6 +8,8 @@ export type ExperienceItem = {
   working?: boolean;
   /** Optional company logo, e.g. "/assets/logos/tidalwave.png". Falls back to initials. */
   logo?: string;
+  /** Set when the logo is light/white and needs a dark tile to be visible. */
+  logoDark?: boolean;
   details?: string[];
   tech?: string[];
 };
@@ -20,6 +22,8 @@ export const experience: ExperienceItem[] = [
     periodLong: "May 2026 – July 2026",
     locationShort: "New Delhi, IN",
     locationLong: "New Delhi, India",
+    logo: "/assets/logos/broz-media.gif",
+    logoDark: true,
     details: [
       "Managed and analyzed influencer marketing and business operations data to support campaign decision-making and operational efficiency.",
       "Worked with large datasets in Excel and Google Sheets for data cleaning, validation, reporting, and performance tracking.",
@@ -36,6 +40,7 @@ export const experience: ExperienceItem[] = [
     periodLong: "September 2023 – November 2024",
     locationShort: "Bengaluru, IN",
     locationLong: "Bengaluru, India",
+    logo: "/assets/logos/tidalwave.jpg",
     details: [
       "Built and maintained GA4 dashboards tracking traffic, goal completions, and revenue attribution across 5+ client accounts; insights contributed to a 20%+ improvement in client conversion rates.",
       "Conducted weekly variance analysis on campaign KPIs (CPC, CTR, ROAS), identifying spend anomalies and recommending adjustments that reduced cost-per-acquisition.",

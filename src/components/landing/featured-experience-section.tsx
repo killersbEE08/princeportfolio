@@ -7,6 +7,7 @@ import { Container } from "@/components/container";
 import { achievements, type Achievement } from "@/config/achievements";
 import { experience, type ExperienceItem } from "@/config/experience";
 import { getTechIcon, techIconSrc } from "@/lib/tech-icons";
+import { cn } from "@/lib/utils";
 
 type FeaturedItem =
   | {
@@ -16,6 +17,7 @@ type FeaturedItem =
       period: string;
       location: string;
       image: string;
+      logoDark?: boolean;
       details: string[];
       tech: string[];
       href: string;
@@ -27,6 +29,7 @@ type FeaturedItem =
       period: string;
       location: string;
       image: string;
+      logoDark?: boolean;
       details: string[];
       tech: string[];
       href: string;
@@ -45,6 +48,7 @@ function experienceToFeatured(item: ExperienceItem): FeaturedItem {
     period: item.periodLong,
     location: item.locationLong.trim(),
     image: item.logo ?? "",
+    logoDark: item.logoDark,
     details: item.details ?? [],
     tech: item.tech ?? [],
     href: "/work",
@@ -103,15 +107,19 @@ function FeaturedExperienceItem({
       <div className="grid gap-4 sm:grid-cols-[88px_minmax(0,1fr)_auto] sm:items-start">
         <Link
           href={item.href}
-          className="relative flex size-16 items-center justify-center overflow-hidden rounded-xl bg-muted shadow-sm transition-transform hover:scale-[1.02]"
+          className={cn(
+            "relative flex size-16 items-center justify-center overflow-hidden rounded-xl shadow-sm transition-transform hover:scale-[1.02]",
+            item.logoDark ? "bg-neutral-900 dark:bg-neutral-800" : "bg-muted",
+          )}
         >
           {item.image ? (
             <Image
               src={item.image}
-              alt=""
+              alt={`${item.title} logo`}
               fill
               sizes="64px"
-              className="object-cover"
+              className="object-contain p-2"
+              unoptimized
             />
           ) : (
             <span className="text-lg font-bold tracking-tight text-secondary">

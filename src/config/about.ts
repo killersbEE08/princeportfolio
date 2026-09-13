@@ -57,16 +57,16 @@ export const aboutConfig = {
     ],
   },
   beyond: {
-    title: "Beyond the dashboards",
+    title: "Beyond Analytics",
     paragraphs: [
-      "Outside of analytics, I'm usually sharpening my SQL, exploring new BI features, or reading about how data teams ship value in the real world. I like **learning by doing** and sharing what actually worked.",
-      "I'm drawn to work that combines **analytical depth** with **business clarity** — the kind of analyst who is trusted in the room where decisions get made.",
+      "Outside my analytics work, I experiment with **software**, **AI**, and small **products** — building things end to end to understand how data actually gets used.",
+      "I like **learning by doing** and sharing what actually worked. I'm drawn to work that combines **analytical depth** with **business clarity** — the kind of analyst who is trusted in the room where decisions get made.",
     ],
   },
   connectLinks: [
     {
       name: "Email",
-      href: "mailto:hello@princelabs.in",
+      href: "mailto:hello@princelabs.me",
       icon: "mail" as const,
     },
     {

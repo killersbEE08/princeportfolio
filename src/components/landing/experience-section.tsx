@@ -1,11 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { Code, Plus, X } from "@phosphor-icons/react";
 import Link from "next/link";
 import { useState } from "react";
 import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
 import { experience, type ExperienceItem } from "@/config/experience";
+import { cn } from "@/lib/utils";
 
 function ExperienceCard({
   job,
@@ -29,8 +31,26 @@ function ExperienceCard({
         <div className="hidden justify-center pt-1 sm:flex">
           <span className="size-2 rounded-full bg-secondary/25" />
         </div>
-        <div className="flex size-11 items-center justify-center rounded-xl border border-border bg-background/70 text-secondary shadow-sm">
-          <Code className="size-5" />
+        <div
+          className={cn(
+            "flex size-11 items-center justify-center overflow-hidden rounded-xl border border-border shadow-sm",
+            job.logoDark ? "bg-neutral-900 dark:bg-neutral-800" : "bg-background/70",
+          )}
+        >
+          {job.logo ? (
+            <div className="relative size-full">
+              <Image
+                src={job.logo}
+                alt={`${job.company} logo`}
+                fill
+                sizes="44px"
+                className="object-contain p-1.5"
+                unoptimized
+              />
+            </div>
+          ) : (
+            <Code className="size-5 text-secondary" />
+          )}
         </div>
         <div className="min-w-0 space-y-3">
           <div className="flex flex-wrap items-center gap-2">

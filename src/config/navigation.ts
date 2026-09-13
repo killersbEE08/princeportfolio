@@ -30,5 +30,5 @@ export const commandItems = [
   { label: "GitHub", href: "https://github.com/killersbEE08", external: true },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/princekumar", external: true },
   { label: "Website", href: "https://princekumar.me", external: true },
-  { label: "Email", href: "mailto:hello@princelabs.in", external: true },
+  { label: "Email", href: "mailto:hello@princelabs.me", external: true },
 ];

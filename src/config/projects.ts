@@ -30,6 +30,7 @@ export const projects: Project[] = [
     tech: ["Power BI", "SQL", "DAX", "Data Modeling"],
     href: "https://github.com/killersbEE08",
     featured: true,
+    cover: "/assets/projects/blinkit.png",
     gradient: "from-yellow-500/25 via-amber-500/15 to-orange-500/25",
     caseStudy: [
       {
@@ -94,6 +95,7 @@ export const projects: Project[] = [
     tech: ["SQL", "Python", "Pandas", "Power BI"],
     href: "https://github.com/killersbEE08",
     featured: true,
+    cover: "/assets/projects/customer-churn.png",
     gradient: "from-rose-500/25 via-pink-500/15 to-fuchsia-500/25",
     caseStudy: [
       {
@@ -161,6 +163,7 @@ export const projects: Project[] = [
     tech: ["Python", "RAG", "SQL", "LLMs"],
     href: "https://github.com/killersbEE08",
     featured: true,
+    cover: "/assets/projects/rag-analytics.png",
     gradient: "from-blue-500/25 via-indigo-500/15 to-violet-500/25",
     caseStudy: [
       {
