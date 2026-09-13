@@ -11,7 +11,7 @@ export const heroConfig = {
 export const socialLinks = [
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/princekumar",
+    href: "https://www.linkedin.com/in/princekumarr007/",
     icon: "linkedin" as const,
   },
   {

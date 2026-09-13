@@ -10,6 +10,7 @@ import { Container } from "@/components/container";
 import { HighlightedText } from "@/components/highlighted-text";
 import { LiquidGlassCard } from "@/components/ui/liquid-glass";
 import { aboutConfig } from "@/config/about";
+import { education } from "@/config/education";
 import { createPageMetadata, pageTitle } from "@/lib/metadata";
 
 const connectIconMap = {
@@ -104,6 +105,28 @@ export default function AboutPage() {
                   {item.description}
                 </p>
               </LiquidGlassCard>
+            ))}
+          </div>
+        </section>
+      </Container>
+
+      <Container>
+        <section className="max-w-2xl space-y-5">
+          <h2 className="text-xl font-bold tracking-tight">Education</h2>
+          <div className="space-y-4">
+            {education.map((edu) => (
+              <div
+                key={edu.school}
+                className="flex items-start justify-between gap-4 border-b border-border pb-4 last:border-0 last:pb-0"
+              >
+                <div className="min-w-0">
+                  <h3 className="font-semibold">{edu.school}</h3>
+                  <p className="mt-0.5 text-sm text-secondary">{edu.degree}</p>
+                </div>
+                <p className="shrink-0 text-right text-sm text-secondary">
+                  {edu.period}
+                </p>
+              </div>
             ))}
           </div>
         </section>

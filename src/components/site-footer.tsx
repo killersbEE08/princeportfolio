@@ -4,7 +4,7 @@ import { Container } from "@/components/container";
 import { siteConfig } from "@/config/meta";
 
 const footerSocial = [
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/princekumar", icon: LinkedinLogo },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/princekumarr007/", icon: LinkedinLogo },
   { name: "GitHub", href: "https://github.com/killersbEE08", icon: GithubLogo },
   { name: "X", href: "https://x.com/Princek26161487", icon: XLogo },
 ];

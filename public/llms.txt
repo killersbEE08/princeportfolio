@@ -1,0 +1,40 @@
+# Prince Kumar — Data Analyst & Business Analytics
+
+> Prince Kumar is a data-driven analyst focused on business analytics and data
+> engineering. He turns raw data into decisions using SQL, Power BI, Python,
+> DAX, and Google Analytics 4, and explores RAG-powered analytics. Based in
+> Gurugram, India. Open to Data Analyst / Analytics roles.
+
+## About
+- Role: Data Analyst, Business Analyst
+- Location: Gurugram, India
+- Focus: Analytics, BI, Data Engineering
+- Core skills: SQL, Advanced Excel, Power BI, DAX, Google Sheets, Python, Pandas, NumPy, PostgreSQL, Google Analytics 4, Data Modeling, Business Analytics, RAG, Data Storytelling
+- Email: hello@princelabs.me
+
+## Experience
+- Data Operations Intern — Broz Media (May 2026 – July 2026), New Delhi: influencer-marketing and business-operations data, KPI tracking, reporting with Excel/Google Sheets.
+- Digital Marketing Specialist, Data & Analytics — Tidalwave Solution Pvt Ltd (Sep 2023 – Nov 2024), Bengaluru: GA4 dashboards, campaign KPI variance analysis, performance reporting.
+- Digital Marketing Executive, Reporting & Analytics — KEY4U Information Consultants (Feb 2023 – Aug 2023), Gurugram.
+
+## Projects
+- Blinkit Sales Performance Dashboard — Power BI, SQL, DAX: /projects/blinkit-sales-dashboard
+- Customer Churn Analysis — SQL, Python, Pandas, Power BI: /projects/customer-churn-analysis
+- RAG Analytics Assistant — Python, RAG, SQL, LLMs: /projects/rag-analytics-assistant
+
+## Education
+- MBA, Business Analytics — Dr. B.R. Ambedkar University Delhi (AUD), 2024–2027 (Expected)
+- Bachelor of Arts — University of Delhi, 2021–2024
+
+## Certifications
+- Google Data Analytics Professional Certificate — Google
+- Google Analytics (GA4) Certification — Google Skillshop
+
+## Links
+- Website: https://princelabs.me
+- About: https://princelabs.me/about
+- Projects: https://princelabs.me/projects
+- Resume: https://princelabs.me/resume
+- LinkedIn: https://www.linkedin.com/in/princekumarr007/
+- GitHub: https://github.com/killersbEE08
+- X: https://x.com/Princek26161487

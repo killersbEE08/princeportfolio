@@ -3,12 +3,12 @@ export const education = [
     school: "Dr. B.R. Ambedkar University Delhi (AUD)",
     degree:
       "Master of Business Administration (MBA) · Business Analytics",
-    period: "2024—2027",
+    period: "2024 — 2027 (Expected)",
   },
   {
     school: "University of Delhi",
     degree: "Bachelor of Arts",
-    period: "2021—2024",
+    period: "2021 — 2024",
   },
 ];
 

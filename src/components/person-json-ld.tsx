@@ -1,5 +1,6 @@
 import { heroConfig, socialLinks } from "@/config/hero";
 import { siteConfig } from "@/config/meta";
+import { education, skills } from "@/config/education";
 
 const profileLinks = socialLinks
   .filter((link) => link.href.startsWith("http"))
@@ -18,8 +19,14 @@ export function PersonJsonLd() {
     address: {
       "@type": "PostalAddress",
       addressLocality: "Gurugram",
+      addressRegion: "Haryana",
       addressCountry: "IN",
     },
+    alumniOf: education.map((edu) => ({
+      "@type": "CollegeOrUniversity",
+      name: edu.school,
+    })),
+    knowsAbout: skills,
     sameAs: profileLinks,
   };
 
