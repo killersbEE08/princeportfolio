@@ -7,6 +7,10 @@ import { heroConfig } from "@/config/hero";
 import { getBlogPost, getBlogPosts } from "@/lib/mdx";
 import { createPageMetadata, pageTitle } from "@/lib/metadata";
 
+// Fully prerender these pages (they read MDX from the filesystem at build time).
+// Cloudflare Workers have no runtime filesystem, so they must be served static.
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
   return posts.map((post) => ({ slug: post.slug }));

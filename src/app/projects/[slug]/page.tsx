@@ -9,6 +9,10 @@ import { projects } from "@/config/projects";
 import { getProjectPost, getProjectPosts } from "@/lib/mdx";
 import { createPageMetadata, pageTitle } from "@/lib/metadata";
 
+// Fully prerender these pages (they read MDX from the filesystem at build time).
+// Cloudflare Workers have no runtime filesystem, so they must be served static.
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
   const posts = await getProjectPosts();
   const slugs = new Set([...projects.map((project) => project.slug), ...posts.map((post) => post.slug)]);
@@ -113,7 +117,23 @@ export default async function ProjectDetailPage({
           </LiquidGlassCard>
         )}
         <article className="prose prose-neutral dark:prose-invert mt-8 max-w-none">
-          {post ? (
+          {project?.caseStudy?.length ? (
+            project.caseStudy.map((section) => (
+              <section key={section.heading}>
+                <h2>{section.heading}</h2>
+                {section.paragraphs?.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+                {section.bullets && section.bullets.length > 0 && (
+                  <ul>
+                    {section.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                )}
+              </section>
+            ))
+          ) : post ? (
             <MdxContent source={post.content} />
           ) : (
             <>
