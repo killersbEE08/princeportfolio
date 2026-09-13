@@ -62,6 +62,10 @@ export const aboutConfig = {
       "Outside my analytics work, I experiment with **software**, **AI**, and small **products** — building things end to end to understand how data actually gets used.",
       "I like **learning by doing** and sharing what actually worked. I'm drawn to work that combines **analytical depth** with **business clarity** — the kind of analyst who is trusted in the room where decisions get made.",
     ],
+    link: {
+      label: "See what I'm building",
+      href: "https://app.princelabs.me/",
+    },
   },
   connectLinks: [
     {

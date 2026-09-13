@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+  ArrowSquareOut,
   EnvelopeSimple,
   GithubLogo,
   LinkedinLogo,
@@ -118,6 +119,17 @@ export default function AboutPage() {
               </p>
             ))}
           </div>
+          {aboutConfig.beyond.link && (
+            <a
+              href={aboutConfig.beyond.link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground underline-offset-4 transition-colors hover:text-secondary hover:underline"
+            >
+              {aboutConfig.beyond.link.label}
+              <ArrowSquareOut className="size-4" />
+            </a>
+          )}
         </section>
       </Container>
 

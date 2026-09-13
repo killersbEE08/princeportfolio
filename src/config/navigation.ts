@@ -29,6 +29,6 @@ export const commandItems = [
   ...footerNav.map((item) => ({ label: item.label, href: item.href })),
   { label: "GitHub", href: "https://github.com/killersbEE08", external: true },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/princekumar", external: true },
-  { label: "Website", href: "https://princekumar.me", external: true },
+  { label: "X", href: "https://x.com/Princek26161487", external: true },
   { label: "Email", href: "mailto:hello@princelabs.me", external: true },
 ];

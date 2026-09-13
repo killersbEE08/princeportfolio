@@ -20,9 +20,9 @@ export const socialLinks = [
     icon: "github" as const,
   },
   {
-    name: "Website",
-    href: "https://princekumar.me",
-    icon: "resume" as const,
+    name: "X",
+    href: "https://x.com/Princek26161487",
+    icon: "x" as const,
   },
   {
     name: "Mail",
